@@ -846,7 +846,7 @@ namespace TCMPortMapper
 			if (result == null)
 			{
 				if (e == null)
-					DebugLog.WriteLine("PortMapper: Router MAC address not in OUI list");
+					DebugLog.WriteLine("PortMapper: Router MAC address not in OUI list: {0}", routerMac);
 				else
 					DebugLog.WriteLine("PortMapper: Error getting router manufacturer: {0}", e);
 			}
