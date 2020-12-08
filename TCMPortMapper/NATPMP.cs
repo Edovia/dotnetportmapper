@@ -78,34 +78,34 @@ namespace TCMPortMapper
 			public newportmapping pnu_newportmapping;
 		}
 
-	//	[DllImport("natpmp.dll")]
-	//	public static extern int getdefaultgateway([In, Out] ref UInt32 addr);
+		//	[DllImport("natpmp.dll", CallingConvention = CallingConvention.Cdecl)]
+		//	public static extern int getdefaultgateway([In, Out] ref UInt32 addr);
 
-		[DllImport("natpmp.dll")]
+		[DllImport("natpmp.dll", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int initnatpmp([In, Out] ref natpmp_t p);
 
-		[DllImport("natpmp.dll")]
+		[DllImport("natpmp.dll", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int closenatpmp([In, Out] ref natpmp_t p);
 
-		[DllImport("natpmp.dll")]
+		[DllImport("natpmp.dll", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int sendpublicaddressrequest([In, Out] ref natpmp_t p);
 
-		[DllImport("natpmp.dll")]
+		[DllImport("natpmp.dll", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int sendnewportmappingrequest([In, Out] ref natpmp_t p,
 		                                                   [In] int protocol,
 		                                                   [In] UInt16 privateport,
 		                                                   [In] UInt16 publicport,
 		                                                   [In] UInt32 lifetime);
 
-		[DllImport("natpmp.dll")]
+		[DllImport("natpmp.dll", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int getnatpmprequesttimeout([In, Out] ref natpmp_t p,
 		                                                 [In, Out] ref Win32.TimeValue timeout);
 
-		[DllImport("natpmp.dll")]
+		[DllImport("natpmp.dll", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int readnatpmpresponseorretry([In, Out] ref natpmp_t p,
 		                                                   [In, Out] ref natpmpresp_t response);
 
-		[DllImport("natpmp.dll")]
+        [DllImport("natpmp.dll", CallingConvention = CallingConvention.Cdecl)]
 		public static extern String strnatpmperr([In] int t);
 	}
 }
